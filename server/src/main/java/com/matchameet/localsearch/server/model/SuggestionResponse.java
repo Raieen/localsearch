@@ -7,25 +7,37 @@ import java.util.List;
  */
 public class SuggestionResponse {
 
-    // First Element
+    /**
+     * Query string.
+     *
+     * First element in response list, allows browsers to verify suggestions match current search term.
+     */
     private String query;
 
-    // Second Element
-    private List<String> suggestions;
+    /**
+     * Completion List
+     */
+    private List<String> completionList;
 
-    // Third Element, not sure what this does yet, Google returns empty list
-    // Wikipedia return suggestions.size number of empty strings in a list
-    // Are these meant to be thumbnails?
-    private List<String> mystery;
+    /**
+     * Descriptions for each suggestion in the completion list.
+     *
+     * Ignored in Firefox.
+     */
+    private List<Object> descriptions;
 
-    // Third Element
-    private List<String> links;
+    /**
+     * Descriptions for each suggestion in the completion list.
+     *
+     * Ignored in Firefox.
+     */
+    private List<String> queryURLs;
 
-    public SuggestionResponse(String query, List<String> suggestions, List<String> mystery, List<String> links) {
+    public SuggestionResponse(String query, List<String> completionList, List<Object> descriptions, List<String> queryURLs) {
         this.query = query;
-        this.suggestions = suggestions;
-        this.mystery = mystery;
-        this.links = links;
+        this.completionList = completionList;
+        this.descriptions = descriptions;
+        this.queryURLs = queryURLs;
     }
 
     public String getQuery() {
@@ -36,28 +48,28 @@ public class SuggestionResponse {
         this.query = query;
     }
 
-    public List<String> getSuggestions() {
-        return suggestions;
+    public List<String> getCompletionList() {
+        return completionList;
     }
 
-    public void setSuggestions(List<String> suggestions) {
-        this.suggestions = suggestions;
+    public void setCompletionList(List<String> completionList) {
+        this.completionList = completionList;
     }
 
-    public List<String> getMystery() {
-        return mystery;
+    public List<Object> getDescriptions() {
+        return descriptions;
     }
 
-    public void setMystery(List<String> mystery) {
-        this.mystery = mystery;
+    public void setDescriptions(List<Object> descriptions) {
+        this.descriptions = descriptions;
     }
 
-    public List<String> getLinks() {
-        return links;
+    public List<String> getQueryURLs() {
+        return queryURLs;
     }
 
-    public void setLinks(List<String> links) {
-        this.links = links;
+    public void setQueryURLs(List<String> queryURLs) {
+        this.queryURLs = queryURLs;
     }
 
     /**
@@ -69,6 +81,6 @@ public class SuggestionResponse {
      * @return List of objects
      */
     public List<Object> getResponse() {
-        return List.of(query, suggestions, mystery, links);
+        return List.of(query, completionList, descriptions, queryURLs);
     }
 }

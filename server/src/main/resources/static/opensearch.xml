@@ -1,12 +1,11 @@
+<?xml version="1.0"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
     <ShortName>Local Search</ShortName>
     <Description>Local Search Description</Description>
-    <InputEncoding>UTF-8</InputEncoding>
     <Image width="16" height="16" type="image/x-icon">https://example.com/favicon.ico</Image>
-    <Url type="text/html" method="GET" template="http://localsearch:8080/?q={searchTerms}">
-        <Param name="l" value="{searchTerms}"/>
-    </Url>
-    <Url type="application/x-suggestions+json" template="http://localsearch:8080/s?q={searchTerms}"/>
+    <Url type="text/html" method="get" template="http://localsearch:8080/?q={searchTerms}"/>
+    <Url type="application/x-suggestions+json" method="get" template="http://localsearch:8080/s?q={searchTerms}"/>
+    <Url type="application/json" rel="suggestions" template="http://localsearch:8080/s?q={searchTerms}"/>
     <moz:SearchForm>https://localsearch</moz:SearchForm>
 </OpenSearchDescription>

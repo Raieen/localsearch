@@ -65,6 +65,7 @@ public class QueryController {
             logger.debug("Successfully ran command {} {}", command, commandArgs);
             return ResponseEntity.ok("ok");
         } else {
+            // TODO: Should fail and fallback to Google/DDG/... whatever is in config file
             logger.debug("Invalid command {} {}", command, commandArgs);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("not found");
         }

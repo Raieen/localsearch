@@ -65,7 +65,8 @@ interface Handler {
 }
 ```
 
-
+## Test if command is alias/path.
+- Run `where command`, which returns 0 iff in alias/path.
 
 ## Hosts File
 
@@ -97,8 +98,9 @@ The code does not support specific order for more than two plugins.
 https://stackoverflow.com/questions/35237414/add-suggestion-url-for-custom-search-engine-in-chrome
 
 ## Misc
-
+https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Supporting_search_suggestions_in_search_plugins
 https://superuser.com/questions/1399929/how-can-you-modify-url-predictions-on-chrome
+https://www.chromium.org/tab-to-search
 
 ## UX
 - https://www.nngroup.com/articles/site-search-suggestions/
