@@ -5,7 +5,7 @@ http://localsearch
 
 ⚠ Work in Progress ⚠
 
-Localsearch is a a small search engine that runs on your machine, it allows support for browser aliases and provides predictive search suggestions from configured sources (Local files, Github, ...).
+Localsearch is a a small search engine that runs on your machine, it allows support for running shell commands from the browser, browser aliases and provides predictive search suggestions from configured sources (Local files, Github, ...).
 
 ## Order of Precedence
 1. Shell Aliases (`.bashrc`, `.zshrc`)/Path
